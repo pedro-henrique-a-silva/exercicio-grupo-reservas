@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Hotel Trybe</title>
+</head>
+
+<body>
+  <header class="header-trybe">
+    <h1>Trybe</h1>
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT3q0v72AJA-p9V_oPst_65uEG9dr1WxKN-ZYp_5gE&s" alt="" srcset="">
+  </header>
+
+  <main>
+    <section class="hotel-form">
+      <h2>Reserve seu Quarto.</h2>
+      <label>Check-in
+        <input type="date" class="inputCheckin">
+      </label>
+      <label>Check-out
+        <input type="date" class="inputCheckout">
+      </label>
+    </section>
+
+    <section class="hotel-form">
+        <h3>Quartos:</h3>
+        <label>
+          <input type="radio" class="bedroom" name="tipoQuarto" value="comum">Comum
+        </label>
+        <br>
+        <label>
+          <input type="radio" class="bedroom" name="tipoQuarto" value="clube">Clube
+        </label>
+        <br>
+        <label>
+          <input type="radio" class="bedroom" name="tipoQuarto" value="luxo">Luxo
+        </label>
+    </section>
+    <section class="hotel-form">
+      <h2>Quantidade de pessoas:</h2>
+      <label>Pessoas:
+        <select class="nPessoas">
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+        </select>
+      </label>
+    </section>
+    <section class="hotel-form">
+      <h2>Observações:</h2>
+      <textarea cols="30" rows="10" class="obs" placeholder="Digite aqui suas Observações..."></textarea>
+    </section>
+    <button type="submit" id="submit-btn">Fazer Reserva</button>
+
+    <section class="list-section">
+      <h2>Reservas</h2>
+      <ol>
+       
+      </ol>
+      <button id="clear-btn">Limpar</button>
+    </section>
+  </main>
+  <!-- Seu código aqui -->
+  <script src="script.js"></script>
+</body>
+
+</html>
