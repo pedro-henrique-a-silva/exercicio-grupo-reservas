@@ -42,11 +42,6 @@ function criarReserva() {
   return [periodo, acomodacao, qtdPessoas, observacao]
 }
 
-// const salvaListaStorage = () => {
-//   const listaReservas = document.querySelector('.list-section ol');
-//   localStorage.setItem('listaReservas', JSON.stringify(listaReservas.innerHTML));
-// }
-
 function salvarListaStorage() {
   const listaReservas = document.querySelector('ol');
   localStorage.setItem('listaReservas', listaReservas.innerHTML);
@@ -78,13 +73,23 @@ const limpaLista = () => {
   btnClear.addEventListener('click', () => {
     const listaReservas = document.querySelector('.list-section ol');
     listaReservas.innerHTML = '';
+    localStorage.removeItem('listaReservas');
   })
 
 }
 
+const recuperaLocalStorage = () => {
+  const listaReservasStorage = localStorage.getItem('listaReservas');
+  const listaReservas = document.querySelector('.list-section ol');
+  if (listaReservasStorage) {
+    listaReservas.innerHTML = listaReservasStorage;
+  }
+};
+
 window.onload = () => {
   salvaLista();
   limpaLista();
+  recuperaLocalStorage();
 }
   
 
