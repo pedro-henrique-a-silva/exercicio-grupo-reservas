@@ -27,6 +27,7 @@ function getData(value) {
   return dataFormatada;
 }
 
+// recupera valores dos inputs
 function criarReserva() {
   const checkin = getData(document.querySelector('.inputCheckin').value);
   const checkout = getData(document.querySelector('.inputCheckout').value);
@@ -42,11 +43,13 @@ function criarReserva() {
   return [periodo, acomodacao, qtdPessoas, observacao]
 }
 
+// função que salva lista no storage
 function salvarListaStorage() {
   const listaReservas = document.querySelector('ol');
   localStorage.setItem('listaReservas', listaReservas.innerHTML);
 }
 
+// Salva reservas nas li's e no storage
 const salvaLista = () => {
   btnSubmit.addEventListener('click', (event) => {
     event.preventDefault()
@@ -69,6 +72,7 @@ const salvaLista = () => {
 
 }
 
+// Limpa lista de Reservas
 const limpaLista = () => {
   btnClear.addEventListener('click', () => {
     const listaReservas = document.querySelector('.list-section ol');
@@ -78,9 +82,11 @@ const limpaLista = () => {
 
 }
 
+// recupera informações do localStorage
 const recuperaLocalStorage = () => {
   const listaReservasStorage = localStorage.getItem('listaReservas');
   const listaReservas = document.querySelector('.list-section ol');
+
   if (listaReservasStorage) {
     listaReservas.innerHTML = listaReservasStorage;
   }
